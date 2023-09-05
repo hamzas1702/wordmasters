@@ -1,0 +1,181 @@
+:root{
+    --green:#538d4e;
+    --yellow:#b59f3b;
+    --grey:#3a3a3c;
+    --black:#121213;
+    --charcoal:#565758;
+    --font:'Roboto' , sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: var(--black);
+    color: white;
+    font-family: var(--font);
+    overflow: hidden;
+}
+
+                                                /* utility classes */
+
+
+.hidden{
+    visibility: hidden;
+
+}
+
+.fade-out{
+    opacity: 1;
+    animation: fade-out 1.5s linear ;
+}
+
+@keyframes fade-out {
+    90%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+/* add shake effect on wrong input */
+.shake{
+    animation: shake 0.7s linear 1;
+}
+@keyframes shake {
+    0%{
+
+    }
+    10%{
+        transform: translateX(7px);
+    }
+    20%{
+        transform: translateX(-7px);
+    }
+    30%{
+        transform: translateX(7px);
+    }
+    40%{
+        transform: translateX(-7px);
+    }
+    50%{
+        transform: translateX(7px);
+    }
+    60%{
+        transform: translateX(-7px);
+    }
+    70%{
+        transform: translateX(7px);
+    }
+    80%{
+        transform: translateX(-7px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    
+}
+
+
+.correct{
+    background-color: var(--green);
+    animation: rotate 0.6s linear 1;
+    
+}
+
+@keyframes rotate {
+    to{
+        transform: rotateX(180deg);
+    }
+}
+
+.close{
+    background-color: var(--yellow);
+    animation: rotate 0.6s linear 1;
+}
+
+.wrong{
+    background-color: var(--grey);
+}
+
+/* header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--charcoal);
+   
+}
+
+header span{
+    font-size: 1.5rem;
+    margin:0 10px ;
+}
+
+/* shown when wrong input is tried to  commit or user has wons */
+.notEnough,.invalidWord,.winner{
+    background-color: white;
+    color: var(--black);
+    width: 160px;
+    font-size: 1rem;
+    font-weight: 900;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    text-align: center;
+    padding:12px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.winner{
+    width: 200px;
+    font-size: 1.2rem;
+    padding: 8px 10px 10px;
+    
+}
+
+.loader{
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 20px 0;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to{
+      transform: rotate(360deg);  
+    }
+}
+
+
+.row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.row div{
+   
+    border: 2px solid var(--grey);
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    padding: 6px 0;
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: 700;
+}
